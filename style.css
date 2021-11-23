@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(12,54,57,0.1), rgba(60, 10, 139, 0.6), rgba(207, 48, 127, 0.9));
+    background: linear-gradient(rgba(147, 213, 218, 0.1), rgba(127, 93, 182, 0.6), rgba(19, 15, 119, 0.9));
     flex-direction: column;
 }
 .film-select{
@@ -36,14 +36,12 @@
 }
 .row{
     display: flex;
-
-
 }
 .row .seat{
     width: 5rem;
     height: 2rem;
     background-color: seashell;
-    margin: 4%;
+    margin: 2%;
     border-radius: 2rem 2rem 0 0;
     cursor: pointer;
     display: flex;

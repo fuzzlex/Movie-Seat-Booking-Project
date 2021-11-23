@@ -4,7 +4,6 @@ const approveButton = document.getElementById("approve-button");
 const selectedSeats = document.getElementsByClassName("selected-seat");
 const allSeats = document.querySelectorAll(".row .seat");
 let valueFilm = 0;
-let x = [];
 localStorage.clear();
 movieSelection.addEventListener("change", (e)=>{
     valueFilm = e.target.value;
@@ -32,7 +31,7 @@ approveButton.addEventListener("click", ()=>{
         e.style.backgroundColor = "rgb(154, 228, 94)"
         
     });
-    x = [...selectedSeats].map( (element) => {
+    let x = [...selectedSeats].map( (element) => {
         return element.textContent;           
      });
     if(valueFilm == 10){
@@ -43,9 +42,11 @@ approveButton.addEventListener("click", ()=>{
                 localStorage.setItem("selected3", x);}
     if(valueFilm == 6){
                     localStorage.setItem("selected4", x);}
+
+[...localStorage.getItem("selected1").split(",")]
                     
-                    x = [];   
-                })
+                 
+})
 
 
 function localStorageLoad() {
