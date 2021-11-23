@@ -79,3 +79,12 @@
 .row .seat:nth-child(5){
     margin-right: 5vw;
 }
+.row .reset-seats{
+    background-color: white;
+}
+.row .occupied{
+    background-color: yellowgreen;
+}
+.row .new-occupied{
+    background-color: red;
+}

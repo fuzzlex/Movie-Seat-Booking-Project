@@ -8,8 +8,8 @@ localStorage.clear();
 movieSelection.addEventListener("change", (e)=>{
     valueFilm = e.target.value;
     allSeats.forEach(g =>{
-        g.classList.remove("selected-seat");
-        g.style.background = "white"
+        g.classList.remove("occupied");
+        g.classList.add("reset-seats");
     });
     localStorageLoad();
 
@@ -19,7 +19,7 @@ seats.forEach(element =>{
     element.addEventListener("click", ()=>{
         if(valueFilm === 0) alert("Please select a film please!!")
         else{
-            element.style.backgroundColor = "violet"
+            element.classList.remove("reset-seats");
             element.classList.toggle("selected-seat");            
     }
     
@@ -27,24 +27,22 @@ seats.forEach(element =>{
 })
 approveButton.addEventListener("click", ()=>{
     confirm("Are you sure to confirm?");
-    [...selectedSeats].forEach((e) =>{
-        e.style.backgroundColor = "rgb(154, 228, 94)"
-        
-    });
     let x = [...selectedSeats].map( (element) => {
         return element.textContent;           
      });
+    [...selectedSeats].forEach((e) =>{
+        e.classList.remove("selected-seat")
+        e.classList.add("occupied")
+        
+    });
     if(valueFilm == 10){
-        localStorage.setItem("selected1", x);}
+       localStorage.setItem("selected1", x);}
     if(valueFilm == 8){
             localStorage.setItem("selected2", x);}
     if(valueFilm == 12){
                 localStorage.setItem("selected3", x);}
     if(valueFilm == 6){
-                    localStorage.setItem("selected4", x);}
-
-[...localStorage.getItem("selected1").split(",")]
-                    
+                    localStorage.setItem("selected4", x);}                 
                  
 })
 
@@ -52,9 +50,10 @@ approveButton.addEventListener("click", ()=>{
 function localStorageLoad() {
     if (valueFilm == 10){
         allSeats.forEach(g =>{
+            g.classList.remove("reset-seats");
             [...localStorage.getItem("selected1").split(",")].forEach(e =>{
                 if(g.textContent == e){
-                    g.style.backgroundColor = "rgb(154, 228, 94)" ;
+                    g.classList.add("occupied")
                 };
             });
         });
@@ -63,7 +62,8 @@ function localStorageLoad() {
             allSeats.forEach(g =>{
                 [...localStorage.getItem("selected2").split(",")].forEach(e =>{
                     if(g.textContent == e){
-                        g.style.backgroundColor = "rgb(154, 228, 94)" ;
+                        g.classList.remove("reset-seats");
+                        g.classList.add("occupied")
                     };
                 });
             });
@@ -72,7 +72,9 @@ function localStorageLoad() {
                 allSeats.forEach(g =>{
                     [...localStorage.getItem("selected3").split(",")].forEach(e =>{
                         if(g.textContent == e){
-                            g.style.backgroundColor = "rgb(154, 228, 94)" ;
+
+                            g.classList.remove("reset-seats");
+                            g.classList.add("occupied")
                         };
                     });
                 });
@@ -81,7 +83,9 @@ function localStorageLoad() {
                     allSeats.forEach(g =>{
                         [...localStorage.getItem("selected4").split(",")].forEach(e =>{
                             if(g.textContent == e){
-                                g.style.backgroundColor = "rgb(154, 228, 94)" ;
+    
+                                g.classList.remove("reset-seats");
+                                g.classList.add("occupied")
                             };
                         });
                     });
