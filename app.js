@@ -6,6 +6,8 @@ const allSeats = document.querySelectorAll(".row .seat");
 let valueFilm = 0;
 let a = []
 localStorage.clear();
+let valuesOfOptions = [...movieSelection.options].map(e =>{
+    return e.value}).splice(1);
 movieSelection.addEventListener("change", (e)=>{
     valueFilm = e.target.value;
     allSeats.forEach(g =>{
@@ -43,9 +45,8 @@ approveButton.addEventListener("click", ()=>{
                 
                  
 })
+
 function addLocalStorage() {
-    let valuesOfOptions = [...movieSelection.options].map(e =>{
-            return e.value}).splice(1); 
             
    let x = [...selectedSeats].map( (f) => {
                 return f.textContent;});
@@ -60,8 +61,6 @@ function addLocalStorage() {
  
 }
 function localStorageLoad() {
-    let valuesOfOptions = [...movieSelection.options].map(e =>{
-        return e.value}).splice(1);
     valuesOfOptions.forEach(e=>{
         if(e == movieSelection.options[movieSelection.selectedIndex].value){
             allSeats.forEach(g =>{
