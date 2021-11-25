@@ -1,2 +1,2 @@
-# Movie-Seat-Project
-https://fuzzlex.github.io/Movie-Seat-Project/
+# Movie-Seat-Booking-Project
+https://fuzzlex.github.io/Movie-Seat-Booking-Project/
