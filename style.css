@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(147, 213, 218, 0.1), rgba(127, 93, 182, 0.6), rgba(19, 15, 119, 0.9));
+    background-image: url("img/image.jpg")  ;
     flex-direction: column;
 }
 .film-select{
@@ -33,6 +33,7 @@
 }
 .seats{
     margin: 2rem;
+    transition: display .5s;
 }
 .row{
     display: flex;
@@ -71,7 +72,8 @@
     margin-left: 2rem;
 }
 .row .selected-seat{
-    background-color: violet;
+    background-color: rgb(255, 0, 255);
+    transition: 0.5s;
 }
 .row .seat:nth-child(2){
     margin-right: 5vw;
@@ -80,11 +82,28 @@
     margin-right: 5vw;
 }
 .row .reset-seats{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    transition: all 1s;
 }
 .row .occupied{
-    background-color: yellowgreen;
+    background-color: rgb(165, 247, 2);
+    transition: 1s;
 }
-.row .new-occupied{
-    background-color: red;
+
+h1,h2,h3,h4{
+    color: aliceblue;
+}
+#approve-button{
+    width: 7rem; 
+    height: 3rem; 
+    background-color: brown;
+    color: rgb(255, 255, 255); 
+    border-radius: 1rem;
+    cursor: pointer;
+    border: none;
+}
+#approve-button:hover{
+    background-color: snow;
+    color: black;
+    transition: 1s;
 }

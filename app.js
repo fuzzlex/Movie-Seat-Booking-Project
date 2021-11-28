@@ -37,6 +37,8 @@ seats.forEach(element =>{
 
 })
 approveButton.addEventListener("click", ()=>{
+    if(valueFilm == 0) alert("Please select a film please!!")
+    else{
     confirm("Are you sure to confirm?");
     addLocalStorage();
 
@@ -45,6 +47,7 @@ approveButton.addEventListener("click", ()=>{
         e.classList.remove("selected-seat");
         e.classList.add("occupied");        
     });
+}
                 
                  
 })
