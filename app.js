@@ -15,7 +15,7 @@ movieSelection.addEventListener("change", (e)=>{
         g.classList.add("reset-seats");
     });
     a = [];
-    a = a.concat([...localStorage.getItem(movieSelection.options[movieSelection.selectedIndex].value).split(",")])
+    a = a.concat([...localStorage.getItem(valueFilm).split(",")])
     localStorageLoad();
 });
 
@@ -25,6 +25,9 @@ movieSelection.addEventListener("change", (e)=>{
 seats.forEach(element =>{
     element.addEventListener("click", ()=>{
         if(valueFilm === 0) alert("Please select a film please!!")
+        else if(element.classList.contains("occupied")){
+            alert("You cannot select occupied seats!! please choose from empty seats ")
+        }
         else{
             element.classList.remove("reset-seats");
             element.classList.toggle("selected-seat"); 
